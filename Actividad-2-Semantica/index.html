@@ -4,79 +4,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnología y Desarrollo Web</title>
+    <!-- Conexión con la hoja de estilos externa -->
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
     <!-- Encabezado Principal y Navegación -->
-    <header id="inicio">
-        <h1>El Futuro del Desarrollo Web en la Era Digital</h1>
-        <p>Explorando las tecnologías que transforman el mundo del software.</p>
+    <header id="inicio" class="encabezado">
+        <div class="contenedor-header">
+            <div class="titulo-sitio">
+                <h1>El Futuro del Desarrollo Web en la Era Digital</h1>
+                <p>Explorando las tecnologías que transforman el mundo del software.</p>
+            </div>
 
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#introduccion">Importancia de HTML5</a></li>
-                <li><a href="#recursos">Recursos Visuales</a></li>
-                <li><a href="#complemento">Información Extra</a></li>
-            </ul>
-        </nav>
+            <!-- Botón de menú adaptable para dispositivos móviles -->
+            <button class="btn-menu" id="btn-menu" aria-label="Abrir menú de navegación">
+                ☰ Menú
+            </button>
+
+            <nav id="menu-principal" class="navegacion">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#introduccion">Importancia de HTML5</a></li>
+                    <li><a href="#recursos">Recursos Visuales</a></li>
+                    <li><a href="#complemento">Información Extra</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <hr>
+    <!-- Sección de Contenido Principal distribuida con CSS Grid -->
+    <main class="contenedor-principal">
+        <div class="contenido-central">
+            
+            <!-- Sección 1: Introducción Teórica y Tarjetas Interactivas -->
+            <section id="introduccion" class="tarjeta-seccion">
+                <h2>¿Por qué aprender HTML5 y CSS3 hoy en día?</h2>
+                <article>
+                    <p>
+                        El desarrollo web es la columna vertebral de internet. HTML5 proporciona la estructura semántica 
+                        necesaria para que los motores de búsqueda entiendan el contenido, mientras que CSS3 permite 
+                        crear experiencias de usuario rápidas, accesibles y adaptables a cualquier dispositivo.
+                    </p>
+                </article>
 
-    <!-- Sección de Contenido Principal de la pagina-->
-    <main>
-         <!-- Sección 1: Introducción Teórica -->
-        <section id="introduccion">
-            <h2>¿Por qué aprender HTML5 y CSS3 hoy en día?</h2>
-            <article>
-                <p>
-                    El desarrollo web es la columna vertebral de internet. HTML5 proporciona la estructura semántica 
-                    necesaria para que los motores de búsqueda entiendan el contenido, mientras que las nuevas 
-                    herramientas permiten crear experiencias de usuario rápidas, accesibles y adaptables a cualquier dispositivo.
-                </p>
-            </article>
-        </section>
-    <!-- Sección 2: Componentes Multimedia y Documentación -->
-    
-        <section id="recursos">
-            <h2>Recursos Visuales y Enlaces</h2>
+                <!-- Elemento de interacción visual: Tarjetas con efecto hover -->
+                <div class="grid-tarjetas">
+                    <div class="card-interactiva">
+                        <h3>HTML5 Semántico</h3>
+                        <p>Mejora el posicionamiento SEO y la accesibilidad mediante etiquetas estructuradas.</p>
+                    </div>
+                    <div class="card-interactiva">
+                        <h3>CSS3 Moderno</h3>
+                        <p>Facilita diseños fluidos con Flexbox, CSS Grid y animaciones sin sobrecargar la web.</p>
+                    </div>
+                    <div class="card-interactiva">
+                        <h3>Diseño Responsivo</h3>
+                        <p>Garantiza una visualización óptima en computadores, tabletas y teléfonos móviles.</p>
+                    </div>
+                </div>
+            </section>
 
-            <figure>
-                <img src="img/interfaz-vscode.jpg" alt="Código de programación en una pantalla" width="500"> 
-                <figcaption>Vista del entorno de desarrollo estructurado en código de programación.</figcaption>
-            </figure>
+            <!-- Sección 2: Componentes Multimedia, Desplegable y Documentación -->
+            <section id="recursos" class="tarjeta-seccion">
+                <h2>Recursos Visuales y Enlaces</h2>
 
-            <article>
-                <p>
-                    Si quieres profundizar más en el aprendizaje de estas tecnologías, puedes visitar el siguiente enlace:
-                </p>
-                <!-- Enlace Funcional -->
-                <a href="https://developer.chrome.com/docs?hl=es-419" target="_blank">Visitar MDN Web Docs (Documentación Oficial)</a> 
-            </article>
+                <figure class="contenedor-imagen">
+                    <!-- Se elimina width="500" para manejar el tamaño de forma responsiva desde CSS -->
+                    <img src="img/interfaz-vscode.jpg" alt="Código de programación en una pantalla"> 
+                    <figcaption>Vista del entorno de desarrollo estructurado en código de programación.</figcaption>
+                </figure>
 
-        </section>
-            <hr>
-            <!-- Bloque de Contenido Complementario Lateral -->
-        <aside id="complemento">
+                <article>
+                    <p>
+                        Si quieres profundizar más en el aprendizaje de estas tecnologías, puedes consultar la documentación oficial:
+                    </p>
+                    <!-- Botón funcional -->
+                    <a href="https://developer.chrome.com/docs?hl=es-419" target="_blank" rel="noopener noreferrer" class="btn-primario">
+                        Explorar Documentación Web
+                    </a> 
+                </article>
+
+                <!-- Elemento de interacción visual: Sección desplegable -->
+                <div class="acordeon-contenedor">
+                    <h3>Preguntas frecuentes sobre desarrollo web</h3>
+                    <details class="desplegable">
+                        <summary>¿Qué diferencia hay entre Flexbox y CSS Grid?</summary>
+                        <p>Flexbox está diseñado para alinear elementos en una sola dimensión (fila o columna), mientras que CSS Grid permite construir cuadrículas completas en dos dimensiones (filas y columnas simultáneamente).</p>
+                    </details>
+                    <details class="desplegable">
+                        <summary>¿Por qué son importantes las Media Queries?</summary>
+                        <p>Permiten aplicar reglas CSS específicas según el ancho de la pantalla del dispositivo, evitando barras de desplazamiento horizontal.</p>
+                    </details>
+                </div>
+            </section>
+
+            <!-- Sección 3: Formulario Interactivo -->
+            <section id="contacto" class="tarjeta-seccion">
+                <h2>Suscríbete a novedades de Desarrollo Web</h2>
+                <form id="formulario-contacto" class="formulario">
+                    <div class="campo-form">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. Miguel Ángel Ospina" required>
+                    </div>
+                    <div class="campo-form">
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+                    </div>
+                    <button type="submit" class="btn-primario">Enviar suscripción</button>
+                    <p id="mensaje-confirmacion" class="mensaje-oculto"></p>
+                </form>
+            </section>
+        </div>
+
+        <!-- Bloque de Contenido Complementario Lateral -->
+        <aside id="complemento" class="barra-lateral">
             <h3>Recursos recomendados</h3>
-            <p>Aquí encontrarás herramientas adicionles para potenciar tu aprendizaje en la ingenieria web:</p>
-            <ul>
-                <li><a href="https://w3c.org"target="_blank">Sitio oficial del consorcio W3C</a></li>
-                <li><a href="https://visualstudio.com" target="_blank">Descargar Visual Studio Code</a></li>
+            <p>Aquí encontrarás herramientas adicionales para potenciar tu aprendizaje en la ingeniería web:</p>
+            <ul class="lista-recursos">
+                <li>
+                    <a href="https://w3c.org" target="_blank" rel="noopener noreferrer" class="btn-secundario">
+                        Sitio oficial del consorcio W3C
+                    </a>
+                </li>
+                <li>
+                    <a href="https://visualstudio.com" target="_blank" rel="noopener noreferrer" class="btn-secundario">
+                        Descargar Visual Studio Code
+                    </a>
+                </li>
             </ul>
         </aside>
-
     </main>
 
-    <hr>
-
     <!-- Pie de Página -->
-    <footer>
+    <footer class="pie-pagina">
         <p>&copy; 2026 - Mi Primer Proyecto Web. Actividad de Aprendizaje.</p>
         <p><strong>Autor del código:</strong> Miguel Ángel Ospina Arriero</p>
         <p><strong>Materia:</strong> Desarrollo Web 1</p>
     </footer>
 
+    <!-- Conexión con JavaScript para interactividad -->
+    <script src="js/script.js"></script>
 </body>
 </html>
