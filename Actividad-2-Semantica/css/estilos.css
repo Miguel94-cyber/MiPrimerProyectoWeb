@@ -1,0 +1,321 @@
+/* Variables de color y tipografía coherente */
+:root {
+    --color-primario: #1e3a8a;
+    --color-secundario: #2563eb;
+    --color-acento: #0f172a;
+    --color-fondo: #f1f5f9;
+    --color-blanco: #ffffff;
+    --color-texto: #334155;
+    --borde-radio: 8px;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Reset básico para evitar desbordamientos horizontales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    overflow-x: hidden;
+}
+
+/* Encabezado y Navegación con Flexbox */
+.encabezado {
+    background: linear-gradient(135deg, var(--color-acento), var(--color-primario));
+    color: var(--color-blanco);
+    padding: 1.5rem 2rem;
+}
+
+.contenedor-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.titulo-sitio h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.navegacion ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.navegacion a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: var(--borde-radio);
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.navegacion a:hover {
+    background-color: var(--color-secundario);
+}
+
+.btn-menu {
+    display: none;
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    border: none;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border-radius: var(--borde-radio);
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+/* Distribución Principal con CSS Grid (Computador) */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.contenido-central {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.tarjeta-seccion, .barra-lateral {
+    background-color: var(--color-blanco);
+    padding: 1.8rem;
+    border-radius: var(--borde-radio);
+    box-shadow: var(--sombra);
+}
+
+h2, h3 {
+    color: var(--color-primario);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Tarjetas interactivas con CSS Grid */
+.grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.card-interactiva {
+    background-color: var(--color-fondo);
+    padding: 1.2rem;
+    border-radius: var(--borde-radio);
+    border-left: 4px solid var(--color-secundario);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-interactiva:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Imágenes responsivas */
+.contenedor-imagen {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.contenedor-imagen img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--borde-radio);
+    display: block;
+    margin: 0 auto;
+}
+
+.contenedor-imagen figcaption {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 0.5rem;
+}
+
+/* Botones funcionales */
+.btn-primario, .btn-secundario {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.75rem 1.2rem;
+    border-radius: var(--borde-radio);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-primario {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+}
+
+.btn-primario:hover {
+    background-color: var(--color-primario);
+    transform: scale(1.02);
+}
+
+.lista-recursos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.btn-secundario {
+    background-color: var(--color-fondo);
+    color: var(--color-primario);
+    border: 1px solid var(--color-secundario);
+    width: 100%;
+}
+
+.btn-secundario:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+}
+
+/* Sección desplegable (Acordeón) */
+.acordeon-contenedor {
+    margin-top: 2rem;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1.5rem;
+}
+
+.desplegable {
+    background-color: var(--color-fondo);
+    padding: 1rem;
+    border-radius: var(--borde-radio);
+    margin-bottom: 0.8rem;
+    cursor: pointer;
+}
+
+.desplegable summary {
+    font-weight: 600;
+    color: var(--color-acento);
+}
+
+.desplegable p {
+    margin-top: 0.8rem;
+    margin-bottom: 0;
+}
+
+/* Formulario */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.campo-form input {
+    padding: 0.7rem;
+    border: 1px solid #cbd5e1;
+    border-radius: var(--borde-radio);
+    font-size: 1rem;
+    width: 100%;
+}
+
+.mensaje-oculto {
+    display: none;
+    color: #15803d;
+    font-weight: 600;
+    background-color: #dcfce7;
+    padding: 0.8rem;
+    border-radius: var(--borde-radio);
+}
+
+/* Pie de Página */
+.pie-pagina {
+    background-color: var(--color-acento);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
+
+.pie-pagina p {
+    margin-bottom: 0.4rem;
+}
+
+/* =========================================
+   MEDIA QUERIES (DISEÑO RESPONSIVO)
+   ========================================= */
+
+/* Resolución de Tableta (hasta 900px) */
+@media (max-width: 900px) {
+    .contenedor-principal {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-tarjetas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Resolución de Teléfono Móvil (hasta 600px) */
+@media (max-width: 600px) {
+    .encabezado {
+        padding: 1.2rem;
+    }
+
+    .titulo-sitio h1 {
+        font-size: 1.4rem;
+    }
+
+    .btn-menu {
+        display: block;
+    }
+
+    .navegacion {
+        display: none;
+        width: 100%;
+    }
+
+    .navegacion.activo {
+        display: block;
+    }
+
+    .navegacion ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .navegacion a {
+        display: block;
+        width: 100%;
+    }
+
+    .grid-tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta-seccion, .barra-lateral {
+        padding: 1.2rem;
+    }
+}
